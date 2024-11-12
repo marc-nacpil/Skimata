@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKIMATA PROJECT</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Outfit", sans-serif;
+        }
+
+        body {
+            background-color: white;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-container {
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .text-line {
+            color: #f26a2e;
+            font-size: 2rem;
+            font-weight: 700;
+            opacity: 0;
+            animation: fadeInLeft 3s forwards;
+        }
+
+        .portfolio {
+            color: #666;
+            margin-left: 1rem;
+            font-weight: 200;
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Second animation to fade everything out */
+        @keyframes fadeOutRight {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .fade-out {
+            animation: fadeOutRight 1s forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="intro-container">
+        <span class="text-line">SKIMATA<span class="portfolio">PROJECT</span></span>
+    </div>
+
+    <script>
+        // Wait then add fade-out class
+        setTimeout(() => {
+            document.querySelector('.intro-container').classList.add('fade-out');
+        }, 2500);
+
+        // Wait for fade-out to complete then redirect
+        setTimeout(() => {
+            // Uncomment next line to enable redirect
+            window.location.href = 'Project Files/html/index.html';
+        }, 3500);
+    </script>
+</body>
+
+</html>
